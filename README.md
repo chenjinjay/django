@@ -8,6 +8,7 @@
 也可以参考源码myblog目录
 # 简介
 article目录是博客的主要内容：
+
 [root@ali my_blog]# tree article
 article
 |-- admin.py
