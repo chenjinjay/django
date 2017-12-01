@@ -1,0 +1,44 @@
+{% extends "mybase.html" %}
+
+{% block content %}
+    {% for post in post_list %}
+        <section>
+            <div class="row">
+            <header>
+            <div class="col-md-offset-3 col-sm-12 col-md-12">
+                <h2>{{ post.title }}</h2>
+            </div>
+            <p class="col-md-offset-3 col-sm-12 col-md-12">
+                <span class="label label-success" >Time:</span> <a href="#">{{ post.date_time }}</a>
+                <a href="#"><span class="label label-info">{{ post.category }}</span></a> 
+                <div class=" col-md-offset-3 col-sm-12 col-md-12">               
+                    <a href="/{{ post.id }}">
+                       <button type="button" class="btn btn-primary btn-sm"> Read More>>> </button>
+                    </a>
+                    <p> </p>
+                </div>
+            </p>
+            </header>
+            </div>
+        </section>
+    {% endfor %}
+  
+      {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+      <div class="col-md-offset-3" >
+      {% if post_list.has_previous %}
+            <a href="?page={{ post_list.previous_page_number }}">
+                <button type="button" class="btn btn-success btn-xs"> Pre Page </button>
+            </a>
+      {% endif %}
+
+      {% if post_list.has_next %}
+            <a href="?page={{ post_list.next_page_number }}">
+                <button type="button" class="btn btn-success btn-xs">Next Page>>> </button>
+            </a>
+      {% endif %}
+      </div>
+    {% endif %} 
+
+
+
+{% endblock %}

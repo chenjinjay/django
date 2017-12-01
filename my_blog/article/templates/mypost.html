@@ -1,0 +1,23 @@
+{% extends "mybase.html" %}
+
+{% block content %}
+<div class="row">
+    <section>
+        <header>
+            <div class="page-header">  
+                <h2>{{ post.title }}</h2>
+            </div>
+            <div class="col-sm-15 col-md-15">
+                <p>
+                    Time:  <a href="#">{{ post.date_time|date:"Y /m /d"}}</a> <a href="#">{{ post.category }}</a>
+                </p>
+            </div>
+       </header>
+           <div class="alert alert-success  col-xs-12 col-md-12">
+               <p>
+                   <font  face="微软雅黑" size="4">{{ post.content|linebreaksbr  }}</font>
+               </p>
+           </div>
+    </section>
+</body>
+{% endblock %}

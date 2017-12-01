@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="/static/article/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <title> 这个蜀黍有点坏 </title>
+        <script>
+            function disp_alert()
+                {
+                    alert("to be continued....")
+                }
+        </script>
+    </head>
+   <style>
+        body
+        {
+            background-size:cover;
+        }
+   </style>  
+   <body background="/static/article/img/mao.jpg" >
+        <div class="row">
+            <div class="page-header text-center">
+            <div class= "container">
+                <h1> 这个蜀黍有点坏 </h1>
+                <p> <small>记录一些个人学习的笔记</small></p>
+                    <a href="http://120.24.66.185:8082/">
+                        <button type="button" class="btn btn-primary btn-bl">About Me </button>
+                    </a>
+                    <a href="http://weibo.com/u/6002665715">
+                        <button type="button" class="btn btn-primary btn-bl">Weibo </button>
+                    </a>
+                    <input  type="button"class="btn btn-primary btn-bl" onclick="disp_alert()" value="GitHub" /> </input>
+            </div>
+        
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-md-10">
+                <ul>
+                    {% block content %}
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+   </body>
+</div>
+</html>
