@@ -1,0 +1,25 @@
+vim /usr/local/nginx/conf/vhost/django_article.conf 
+
+upstream django {
+    server unix:///Django/my_blog/my_blog.sock;
+}
+
+server {
+    listen 8082;
+    server_name 120.24.66.185;
+    charset     utf-8;
+    client_max_body_size 75M;
+    error_log /var/log/nginx/error.log;
+    access_log /var/log/nginx/access.log;
+    location /media  {
+        alias /Django/my_blog_data/media;
+    }
+    location ~/static/ {
+        root /Django/my_blog;
+        break;
+    }
+    location / {
+        uwsgi_pass  django;
+        include     /Django/my_blog/uwsgi_params;
+    }
+}
